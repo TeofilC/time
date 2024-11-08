@@ -17,7 +17,7 @@ import Data.Fixed
 import Data.Ix
 import Data.Time.Calendar.Days
 import GHC.Generics
-import qualified Language.Haskell.TH.Syntax as TH
+import qualified TemplateHaskell.Lift as TH
 
 data DayOfWeek
     = Monday

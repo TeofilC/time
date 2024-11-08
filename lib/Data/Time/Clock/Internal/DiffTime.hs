@@ -15,7 +15,7 @@ import Control.DeepSeq
 import Data.Data
 import Data.Fixed
 import GHC.Read
-import qualified Language.Haskell.TH.Syntax as TH
+import qualified TemplateHaskell.Lift as TH
 import Text.ParserCombinators.ReadP
 import Text.ParserCombinators.ReadPrec
 
@@ -80,7 +80,6 @@ instance RealFrac DiffTime where
 
 -- Let GHC derive the instances when 'Fixed' has 'TH.Lift' instance.
 instance TH.Lift DiffTime where
-    liftTyped :: TH.Quote m => DiffTime -> TH.Code m DiffTime
     liftTyped (MkDiffTime (MkFixed a)) = [||MkDiffTime (MkFixed $$(TH.liftTyped a))||]
 
 -- | Create a 'DiffTime' which represents an integral number of seconds.

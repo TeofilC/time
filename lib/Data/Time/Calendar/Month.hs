@@ -19,7 +19,7 @@ import Data.Time.Calendar.Days
 import Data.Time.Calendar.Gregorian
 import Data.Time.Calendar.Private
 import GHC.Generics
-import qualified Language.Haskell.TH.Syntax as TH
+import qualified TemplateHaskell.Lift as TH
 import Text.ParserCombinators.ReadP
 import Text.Read
 
